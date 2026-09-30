@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>青铜博物馆 · 语音导览器周转台</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◈</span>
+    <div>
+      <h1>青铜博物馆</h1>
+      <span class="sub">语音导览器借还 · 消毒 · 充电周转台</span>
+    </div>
+  </div>
+  <div class="actor">
+    <label>当前身份
+      <select id="actorRole"></select>
+    </label>
+    <label>在岗馆区
+      <select id="actorSite"></select>
+    </label>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <a href="#/counter" data-route="counter">借用柜台</a>
+  <a href="#/devices" data-route="devices">设备可用表</a>
+  <a href="#/return" data-route="return">归还检查</a>
+  <a href="#/disinfect" data-route="disinfect">消毒组批</a>
+  <a href="#/slots" data-route="slots">充电槽视图</a>
+  <a href="#/repairs" data-route="repairs">维修队列</a>
+  <a href="#/deposits" data-route="deposits">押金复核</a>
+</nav>
+
+<div class="kpis" id="kpis"></div>
+
+<main id="view"></main>
+
+<div id="toast" class="toast"></div>
+<footer class="foot">演示数据 · 押金 ¥200/台 · 满电阈值 <span id="thrNote">80%</span> ·
+  模拟支付网关与充电柜适配器 · 本地 SQLite + 离线语言包</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
