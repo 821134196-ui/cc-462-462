@@ -1,0 +1,156 @@
+/* 展厅白 · 青铜绿 · 暗金 */
+:root{
+  --paper:#f6f3ec; --card:#fffdf7; --ink:#2c2a24; --muted:#7c7666;
+  --bronze:#38695a; --bronze-d:#274b40; --gold:#a3802a; --gold-l:#c9ae5d;
+  --line:#e4ddc9; --bad:#a33b2e; --ok:#3d7a4f;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:15px/1.6 "PingFang SC","Microsoft YaHei",sans-serif}
+h1,h2,.logo{font-family:"Noto Serif SC","Songti SC","SimSun",serif}
+h1{font-size:24px;margin:18px 0 14px;color:var(--bronze-d)}
+h2{font-size:17px;margin-bottom:10px;color:var(--bronze-d)}
+h2 small{color:var(--muted);font-weight:normal;margin-left:8px;font-size:13px}
+a{color:var(--bronze);text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
+.center{text-align:center}
+.hint{color:var(--muted);font-size:13px;margin:6px 0}
+.miss{color:var(--bad)}
+
+header{display:flex;align-items:center;gap:18px;background:var(--bronze-d);
+  padding:10px 22px;color:#f0ead8;position:sticky;top:0;z-index:9;flex-wrap:wrap}
+.logo{color:var(--gold-l);font-size:19px;letter-spacing:2px}
+.logo:hover{text-decoration:none}
+nav{display:flex;gap:2px;flex:1;flex-wrap:wrap}
+nav a{color:#d8d2bd;padding:6px 11px;border-radius:6px;font-size:14px}
+nav a:hover{background:rgba(255,255,255,.08);text-decoration:none}
+nav a.on{background:var(--bronze);color:#fff}
+.who{display:flex;align-items:center;gap:8px}
+.who select{background:var(--bronze);color:#fff;border:1px solid var(--gold);
+  border-radius:6px;padding:4px 6px;font-size:13px}
+.role{color:var(--gold-l);font-size:12px;border:1px solid var(--gold);
+  padding:2px 8px;border-radius:10px}
+
+main{max-width:1080px;margin:0 auto;padding:8px 22px 40px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:18px;border-top:1px solid var(--line)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin:12px 0;box-shadow:0 1px 3px rgba(60,50,20,.05)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--bronze-d);border-bottom:2px solid var(--gold-l);
+  padding:7px 8px;font-weight:600;white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:hover td{background:#faf7ee}
+
+.btn,button{background:var(--bronze);color:#fff;border:none;border-radius:8px;
+  padding:8px 18px;font-size:14px;cursor:pointer;display:inline-block}
+.btn:hover,button:hover{background:var(--bronze-d);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--bronze);border:1px solid var(--bronze)}
+button.warn{background:var(--gold)}
+button.warn:hover{background:#8a6c22}
+button.mini{font-size:11px;padding:3px 8px;border-radius:5px}
+.btn.big{font-size:20px;padding:16px 40px;border-radius:12px}
+form.inline{display:inline}
+form.inline button{font-size:12px;padding:4px 10px;margin-right:4px}
+.filters{display:flex;gap:10px;align-items:center;margin:10px 0;flex-wrap:wrap}
+select,input{padding:8px 10px;border:1px solid var(--line);border-radius:8px;
+  font-size:14px;background:#fff}
+input:focus,select:focus{outline:2px solid var(--gold-l)}
+.ops a,.ops form{margin-right:6px;font-size:13px}
+
+.flash{padding:10px 16px;border-radius:8px;margin:12px 0;font-size:14px}
+.flash.ok{background:#e8f0e6;border:1px solid #b8d0b2;color:var(--ok)}
+.flash.err{background:#f7e9e4;border:1px solid #ddb9ac;color:var(--bad)}
+.errcard{border-color:#ddb9ac}
+.big-err{font-size:18px;margin:12px 0;color:var(--bad)}
+.okcard{border-color:#b8d0b2}
+
+/* 状态徽章 */
+.badge{display:inline-block;padding:2px 10px;border-radius:11px;font-size:12px;white-space:nowrap}
+.st-available{background:#e3efe4;color:var(--ok)}
+.st-on_loan{background:#e7ecf5;color:#3a5a8c}
+.st-pending_disinfection{background:#f6ecd4;color:#8a6c22}
+.st-pending_charging{background:#e9e4f2;color:#5d4a8a}
+.st-repair,.st-scrapped{background:#f7e9e4;color:var(--bad)}
+.st-active{background:#e7ecf5;color:#3a5a8c}
+.st-overdue{background:#f7e9e4;color:var(--bad)}
+.st-returned{background:#e3efe4;color:var(--ok)}
+.st-disputed{background:#f6ecd4;color:#8a6c22}
+.st-rp-queued{background:#f6ecd4;color:#8a6c22}
+.st-rp-in_repair{background:#e7ecf5;color:#3a5a8c}
+.st-rp-fixed{background:#e3efe4;color:var(--ok)}
+.st-rp-scrapped{background:#eee;color:#777}
+
+/* 电量:只用细条与数值 */
+.batt{display:inline-block;width:64px;height:5px;background:#e8e2d0;border-radius:3px;
+  overflow:hidden;vertical-align:middle;margin-right:6px}
+.batt i{display:block;height:100%;background:var(--bronze)}
+.batt.mid i{background:var(--gold)}
+.batt.low i{background:var(--bad)}
+.batt-v{font-size:12px;color:var(--muted);font-family:ui-monospace,monospace}
+
+/* 语言包短标签 */
+.tag{display:inline-block;background:#efe9d8;border:1px solid var(--line);color:var(--bronze-d);
+  padding:1px 8px;border-radius:9px;font-size:12px;margin:1px 2px}
+.tag.bad{background:#f7e9e4;color:var(--bad);border-color:#ddb9ac}
+
+/* 首页统计 */
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:14px;text-align:center;display:block}
+.stat:hover{text-decoration:none;border-color:var(--gold-l)}
+.stat b{display:block;font-size:26px;color:var(--bronze-d)}
+.stat span{color:var(--muted);font-size:13px}
+.stat.st-overdue b,.stat.st-disputed b,.stat.st-repair b{color:var(--bad)}
+.stat.st-pending_disinfection b,.stat.st-pending_charging b{color:var(--gold)}
+
+/* 充电槽阵列 */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin-top:8px}
+.slot{border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center;
+  background:#fbf9f2;font-size:12px}
+.slot-no{font-weight:700;color:var(--bronze-d);font-size:13px}
+.slot-dev{padding:3px 0}
+.slot-dev.empty{color:#c5bda6}
+.slot .batt{width:100%;margin:4px 0 2px}
+.slot.st-charging{border-color:var(--bronze);background:#f2f7f3}
+.slot.st-fault{border-color:var(--gold);background:#faf3e2}
+.slot .fault{color:var(--bad);font-weight:700}
+.slot form{margin-top:4px}
+
+/* 归还检查:照片在左,勾选在右 */
+.return-grid{display:grid;grid-template-columns:300px 1fr;gap:14px;align-items:start}
+.photo-card{text-align:center}
+.dev-photo-lg{width:100%;border-radius:10px;border:1px solid var(--line)}
+.check-card .chk{display:block;font-size:16px;padding:8px 0}
+.check-card .chk input{width:18px;height:18px;margin-right:8px}
+.radio-row{padding:8px 0;border-top:1px dashed var(--line)}
+.radio-row span{display:inline-block;width:80px;color:var(--bronze-d);font-weight:600}
+.radio-row label{margin-right:16px}
+.check-card .btn.big{width:100%;margin-top:12px}
+
+/* 借用柜台:大字号、少步骤 */
+main.counter{max-width:760px}
+.kiosk{text-align:center}
+.kiosk h1{font-size:34px;margin:26px 0 6px}
+.step{color:var(--muted);font-size:16px;margin-bottom:20px}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin:0 auto}
+.lang-btn{background:var(--card);border:2px solid var(--bronze);border-radius:16px;
+  padding:30px 10px;display:block}
+.lang-btn:hover{background:var(--bronze);text-decoration:none}
+.lang-btn:hover b,.lang-btn:hover span{color:#fff}
+.lang-btn b{font-size:26px;color:var(--bronze-d);display:block}
+.lang-btn span{color:var(--muted);font-size:13px}
+.kiosk-dev{display:flex;gap:18px;align-items:center;text-align:left;max-width:560px;margin:0 auto 16px}
+.dev-photo{width:150px;border-radius:10px;border:1px solid var(--line)}
+.dev-code{font-size:30px;font-weight:700;font-family:ui-monospace,monospace;color:var(--bronze-d)}
+.depo{color:var(--muted);font-size:14px}
+.kiosk-form{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+.kiosk-form label{font-size:17px;text-align:left}
+.kiosk-form input{width:100%;font-size:18px;padding:12px;margin-top:4px}
+.bigline{font-size:19px;margin:8px 0}
+.dispute{border-left:4px solid var(--gold)}
+
+@media(max-width:760px){
+  .return-grid{grid-template-columns:1fr}
+  .kiosk-dev{flex-direction:column;text-align:center}
+}
